@@ -32,6 +32,9 @@ class Animal
 end
 
 class Dog < Animal
+	def to_s
+		puts "#{name} the dog is #{age} years old."
+	end
 end
 
 class Bird < Animal
