@@ -11,7 +11,23 @@ end
 
 class Dog
 	
-	attr_accessor :name, :age
+	attr_reader :name, :age
+
+	def name=(value)
+		if value == ""
+			puts "Name can't be blank!"
+		else
+			@name = value
+		end
+	end
+
+	def age=(value)
+		if value < 0
+			puts "An age of #{value} is not valid!"
+		else
+			@age = value
+		end
+	end
 
 	def talk 
 		puts "#{@name} says Bark!"
@@ -55,3 +71,8 @@ rex.age = 3
 rex.move("bed")
 rex.report_age
 fido.report_age
+
+glitch = Dog.new
+glitch.name = ""
+glitch.age = -256
+glitch.report_age
