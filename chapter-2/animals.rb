@@ -11,21 +11,7 @@ end
 
 class Dog
 	
-	def name=(value)
-		@name = value
-	end
-
-	def name
-		@name
-	end
-
-	def age=(value)
-		@age = value
-	end
-
-	def age
-		@age
-	end
+	attr_accessor :name, :age
 
 	def talk 
 		puts "#{@name} says Bark!"
