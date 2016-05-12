@@ -1,4 +1,4 @@
-class Dog
+class Animal
 	
 	attr_reader :name, :age
 
@@ -18,7 +18,7 @@ class Dog
 		end
 	end
 
-	def talk 
+	def talk
 		puts "#{@name} says Bark!"
 	end
 	
@@ -31,9 +31,26 @@ class Dog
 	end
 end
 
-dog = Dog.new
-dog.name = 'Daisy'
-dog.age = 3
-dog.report_age
-dog.talk
-dog.move('bed')
+class Dog < Animal
+end
+
+class Bird < Animal
+	def talk
+		puts "#{name} says Chirp! Chirp!"
+	end
+end
+
+class Cat < Animal
+	def talk
+		puts "#{name} says Meow!"
+	end
+end
+
+class Armadillo < Animal
+	def move(destination)
+		puts "#{name} unrolls!"
+		super
+	end
+end
+
+
