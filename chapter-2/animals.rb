@@ -15,7 +15,7 @@ class Dog
 
 	def name=(value)
 		if value == ""
-			puts "Name can't be blank!"
+			raise "Name can't be blank!"
 		else
 			@name = value
 		end
@@ -23,7 +23,7 @@ class Dog
 
 	def age=(value)
 		if value < 0
-			puts "An age of #{value} is not valid!"
+			raise "An age of #{value} is not valid!"
 		else
 			@age = value
 		end
