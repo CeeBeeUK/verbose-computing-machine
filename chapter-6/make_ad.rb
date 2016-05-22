@@ -11,13 +11,9 @@ reviews = relevent_lines.reject { |line| line.include?('--') }
 def find_adjective(string)
 	words = string.split(' ')
 	index = words.find_index('is')
-	words[index+1]
+	words[index + 1]
 end
 
-adjectives = []
-
-reviews.each do |review|
-	adjectives << find_adjective(review)
-end
+adjectives = reviews.map { |review| find_adjective(review) }
 
 puts adjectives
