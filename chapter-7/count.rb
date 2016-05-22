@@ -11,4 +11,7 @@ lines.each do |line|
 	# personally, I would have added the upcase after chomp!
 	votes[name] += 1
 end
-p votes
+
+votes.each do |name, count|
+	puts "#{name}: #{count}"
+end
