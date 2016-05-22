@@ -8,4 +8,4 @@ relevent_lines = lines.find_all { |line| line.include?('Truncated') }
 
 reviews = relevent_lines.reject { |line| line.include?('--') }
 
-puts relevent_lines
+puts reviews
