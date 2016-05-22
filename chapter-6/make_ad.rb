@@ -14,6 +14,10 @@ def find_adjective(string)
 	words[index + 1]
 end
 
-adjectives = reviews.map { |review| find_adjective(review) }
+adjectives = reviews.map do |review| 
+	adjective = find_adjective(review) 
+	"'#{adjective.capitalize}'"
+end
 
+puts 'The critics agree, Truncated is:'
 puts adjectives
