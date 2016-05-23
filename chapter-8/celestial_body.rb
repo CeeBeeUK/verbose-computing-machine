@@ -4,16 +4,21 @@ end
 
 default_body = CelestialBody.new
 default_body.type = 'planet'
-bodies = Hash.new(default_body)
+bodies = Hash.new do |hash, key|
+	body = CelestialBody.new
+	body.type = 'planet'
+	hash[key] = body
+	body
+end
 
-p bodies.default
 bodies['Mars'].name = 'Mars'
 bodies['Europa'].name = 'Europa'
 bodies['Europa'].type = 'Moon'
 bodies['Venus'].name = 'Venus'
 
-p bodies.default
-p bodies
+p bodies['Mars']
+p bodies['Europa']
+p bodies['Venus']
 
 altair = CelestialBody.new
 altair.name = 'Altair'
