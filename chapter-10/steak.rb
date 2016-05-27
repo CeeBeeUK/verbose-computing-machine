@@ -1,4 +1,7 @@
 class Steak
+
+include Comparable
+
 	attr_accessor :grade
 	GRADE_SCORES = { prime: 3, choice: 2, select:1 }
 
@@ -13,11 +16,19 @@ class Steak
 	end
 end
 
-first_steak = Steak.new
-first_steak.grade = :prime
+prime = Steak.new
+prime.grade = :prime
 
-second_steak = Steak.new
-second_steak.grade = :choice
+choice = Steak.new
+choice.grade = :choice
 
-puts first_steak <=> second_steak
-puts second_steak <=> first_steak
+select = Steak.new
+select.grade = :select
+
+puts "prime > choice #{prime > choice}"
+puts "prime < select #{prime < select}"
+puts "select == select #{select == select}"
+puts "select <= select #{select <= select}"
+puts "select >= choice #{select >= choice}"
+print "choice.between?(select, prime): "
+puts choice.between?(select, prime)
