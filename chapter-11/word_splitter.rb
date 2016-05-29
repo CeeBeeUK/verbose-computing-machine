@@ -7,6 +7,12 @@ class	WordSplitter
 	# The string to split into words
 	attr_accessor :string
 
+	# Creates a new instance with it's string
+	# attribute set to the given value.
+	def initialize(string)	
+		self.string = string
+	end
+
 	# Passes each word in the string into a block,
 	# one at a time.
 	def each 
