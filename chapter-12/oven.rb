@@ -42,3 +42,25 @@ dinner.each do |item|
 		retry
 	end
 end
+
+oven = SmallOven.new
+begin
+	oven.turn_on
+	oven.contents = 'turkey'
+	puts "Serving #{oven.bake}"
+rescue OvenEmptyError => error
+	puts "Error: #{error.message}"
+ensure
+	oven.turn_off
+end
+
+oven = SmallOven.new
+begin
+	oven.turn_on
+	oven.contents = nil
+	puts "Serving #{oven.bake}"
+rescue OvenEmptyError => error
+	puts "Error: #{error.message}"
+ensure
+	oven.turn_off
+end
