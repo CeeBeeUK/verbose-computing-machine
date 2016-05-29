@@ -23,7 +23,6 @@ class SmallOven
 end
 
 dinner = ['turkey', 'casserole', 'pie']
-
 oven = SmallOven.new
 oven.turn_on
 dinner.each do |item|
@@ -31,12 +30,19 @@ dinner.each do |item|
 	puts "Serving #{oven.bake}"
 end
 
+dinner = ['turkey', nil, 'pie']
+oven = SmallOven.new
+oven.turn_off
+dinner.each do |item|
+	begin
+		oven.contents = item
+		puts "Serving #{oven.bake}"
+	rescue =>  error
+		puts "Error: #{error}"
+	end
+end
+
 oven = SmallOven.new
 oven.turn_off
 oven.contents = 'turkey'
-puts "Serving #{oven.bake}"
-
-oven = SmallOven.new
-oven.turn_on
-oven.contents = nil
 puts "Serving #{oven.bake}"
