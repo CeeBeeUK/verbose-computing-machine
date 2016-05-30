@@ -1,0 +1,6 @@
+---
+1: !ruby/object:Movie
+  title: Beetlejuice
+  director: Tim BUrton
+  year: '1988'
+  id: 1
