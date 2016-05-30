@@ -7,9 +7,9 @@
 	<body>
 	<h1>My movies</h1>
 	<ul>
-		<li><%= @movie.title %></li>
-		<li>go</li>
-		<li>here</li>
+		<% @movies.each do |movie| %>
+			<li><%= movie.title %></li>
+		<% end %>
 	</ul>
 	<a href='/movies/new'>Add new movie</a>	
 	</body>
