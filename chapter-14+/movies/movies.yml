@@ -4,3 +4,13 @@
   director: Tim BUrton
   year: '1988'
   id: 1
+2: !ruby/object:Movie
+  title: Star Wars
+  director: George Lucas
+  year: '1977'
+  id: 2
+3: !ruby/object:Movie
+  title: Ghostbusters
+  director: Ivan Reitman
+  year: '1984'
+  id: 3
